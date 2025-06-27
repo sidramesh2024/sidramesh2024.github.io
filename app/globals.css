@@ -150,6 +150,17 @@ html {
   }
 }
 
+/* Breadcrumb Navigation Styles */
+.breadcrumb-container {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.breadcrumb-container:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
 /* Smooth animations */
 .fade-in {
   animation: fadeIn 0.6s ease-out forwards;

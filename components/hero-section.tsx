@@ -20,7 +20,7 @@ export function HeroSection() {
   }
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center tech-pattern overflow-hidden pt-16">
+    <section id="hero" className="relative min-h-screen flex items-center justify-center tech-pattern overflow-hidden pt-16">
       {/* Background Elements */}
       <div className="absolute inset-0 hero-gradient" />
       <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-transparent" />
