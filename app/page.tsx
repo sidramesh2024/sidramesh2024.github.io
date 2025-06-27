@@ -7,11 +7,15 @@ import { CertificationsSection } from '@/components/certifications-section'
 import { EducationSection } from '@/components/education-section'
 import { NavigationHeader } from '@/components/navigation-header'
 import { BreadcrumbNavigation } from '@/components/breadcrumb-navigation'
+import { StructuredData } from '@/components/structured-data'
+import { SEOOptimizer } from '@/components/seo-optimizer'
 import { Footer } from '@/components/footer'
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-white">
+      <StructuredData />
+      <SEOOptimizer />
       <NavigationHeader />
       <BreadcrumbNavigation />
       <main>

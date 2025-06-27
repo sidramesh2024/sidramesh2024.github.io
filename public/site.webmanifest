@@ -1,0 +1,25 @@
+{
+  "name": "Sidharth Ramesh - Lead Data Engineer & AI Specialist",
+  "short_name": "Sidharth Ramesh",
+  "description": "Lead Data Engineer with 8+ years expertise in Gen AI, AWS, Azure, and scalable data solutions",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#3b82f6",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ],
+  "categories": ["business", "productivity", "technology"],
+  "lang": "en-US",
+  "dir": "ltr"
+} 

@@ -20,13 +20,17 @@ export function HeroSection() {
   }
 
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center tech-pattern overflow-hidden pt-16">
+    <section 
+      id="hero" 
+      className="relative min-h-screen flex items-center justify-center tech-pattern overflow-hidden pt-16"
+      aria-label="Hero section - Sidharth Ramesh introduction"
+    >
       {/* Background Elements */}
-      <div className="absolute inset-0 hero-gradient" />
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-transparent" />
+      <div className="absolute inset-0 hero-gradient" aria-hidden="true" />
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-transparent" aria-hidden="true" />
       
       {/* Floating Tech Elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
         <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-blue-400 rounded-full animate-pulse" />
         <div className="absolute top-3/4 right-1/4 w-1 h-1 bg-blue-500 rounded-full animate-pulse delay-1000" />
         <div className="absolute bottom-1/4 left-1/3 w-1.5 h-1.5 bg-blue-300 rounded-full animate-pulse delay-500" />
@@ -35,7 +39,7 @@ export function HeroSection() {
       <div className="container-width relative z-10 px-4 sm:px-6 lg:px-8">
         <div className="text-center space-y-6 sm:space-y-8">
           {/* Main Content */}
-          <motion.div
+          <motion.header
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 30 }}
             transition={{ duration: 0.8, ease: 'easeOut' }}
@@ -44,7 +48,7 @@ export function HeroSection() {
               <span className="block">Sidharth Ramesh</span>
               <span className="block text-blue-600 mt-1 sm:mt-2">Lead Data Engineer</span>
             </h1>
-          </motion.div>
+          </motion.header>
           
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -62,35 +66,39 @@ export function HeroSection() {
             animate={{ opacity: isVisible ? 1 : 0, scale: isVisible ? 1 : 0.9 }}
             transition={{ duration: 0.8, delay: 0.4, ease: 'easeOut' }}
             className="flex flex-wrap justify-center gap-6 sm:gap-8 md:gap-12 text-center"
+            role="list"
+            aria-label="Key achievements and statistics"
           >
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col items-center" role="listitem">
               <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-blue-600">8+</div>
               <div className="text-xs sm:text-sm text-gray-600">Years Experience</div>
             </div>
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col items-center" role="listitem">
               <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-blue-600">$300K</div>
               <div className="text-xs sm:text-sm text-gray-600">Annual Savings</div>
             </div>
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col items-center" role="listitem">
               <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-blue-600">7</div>
               <div className="text-xs sm:text-sm text-gray-600">Certifications</div>
             </div>
           </motion.div>
 
           {/* CTA Buttons */}
-          <motion.div
+          <motion.nav
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
             transition={{ duration: 0.8, delay: 0.6, ease: 'easeOut' }}
             className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center px-4"
+            aria-label="Call to action buttons"
           >
             <Button
               onClick={scrollToNext}
               size="lg"
               className="tech-gradient text-white hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 group w-full sm:w-auto"
+              aria-label="Scroll to view my work and portfolio"
             >
               View My Work
-              <ArrowDown className="ml-2 w-4 h-4 group-hover:translate-y-1 transition-transform" />
+              <ArrowDown className="ml-2 w-4 h-4 group-hover:translate-y-1 transition-transform" aria-hidden="true" />
             </Button>
             <Button
               variant="outline"
@@ -102,12 +110,13 @@ export function HeroSection() {
                 href="https://www.linkedin.com/in/sidharthramesh/"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Connect with Sidharth Ramesh on LinkedIn (opens in new tab)"
               >
                 Connect on LinkedIn
-                <ExternalLink className="ml-2 w-4 h-4" />
+                <ExternalLink className="ml-2 w-4 h-4" aria-hidden="true" />
               </a>
             </Button>
-          </motion.div>
+          </motion.nav>
 
           {/* Specializations */}
           <motion.div
@@ -115,12 +124,15 @@ export function HeroSection() {
             animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
             transition={{ duration: 0.8, delay: 0.8, ease: 'easeOut' }}
             className="flex flex-wrap justify-center gap-2 max-w-3xl mx-auto px-4"
+            role="list"
+            aria-label="Technical specializations and skills"
           >
             {['Gen AI', 'AWS', 'Azure', 'MLOps', 'Data Pipelines', 'Spark', 'Snowflake'].map((tech, index) => (
               <span
                 key={tech}
                 className="skill-badge text-xs sm:text-sm"
                 style={{ animationDelay: `${index * 0.1}s` }}
+                role="listitem"
               >
                 {tech}
               </span>
@@ -139,9 +151,10 @@ export function HeroSection() {
         <button
           onClick={scrollToNext}
           className="flex flex-col items-center space-y-2 text-gray-500 hover:text-blue-600 transition-colors group"
+          aria-label="Scroll down to explore more content"
         >
           <span className="text-xs sm:text-sm font-medium">Scroll to explore</span>
-          <ArrowDown className="w-4 h-4 sm:w-5 sm:h-5 animate-bounce group-hover:text-blue-600" />
+          <ArrowDown className="w-4 h-4 sm:w-5 sm:h-5 animate-bounce group-hover:text-blue-600" aria-hidden="true" />
         </button>
       </motion.div>
     </section>
