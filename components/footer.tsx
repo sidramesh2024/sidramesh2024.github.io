@@ -103,11 +103,6 @@ export function Footer() {
                   </a>
                 </div>
               </div>
-              <div className="pt-4">
-                <p className="text-sm text-gray-400">
-                  Open to new opportunities and interesting projects in data engineering and AI.
-                </p>
-              </div>
             </div>
           </div>
         </div>

@@ -201,11 +201,6 @@ export function ExperienceSection() {
             <div className="text-gray-700 font-medium text-sm sm:text-base">Years Experience</div>
             <div className="text-xs sm:text-sm text-gray-500">Data Engineering & AI</div>
           </div>
-          <div className="text-center p-4 sm:p-6 bg-purple-50 rounded-xl border border-purple-100">
-            <div className="text-2xl sm:text-3xl font-bold text-purple-600 mb-2">$300K</div>
-            <div className="text-gray-700 font-medium text-sm sm:text-base">Annual Savings</div>
-            <div className="text-xs sm:text-sm text-gray-500">Through Automation</div>
-          </div>
         </motion.div>
       </div>
     </section>

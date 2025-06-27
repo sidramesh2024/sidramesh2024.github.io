@@ -73,10 +73,7 @@ export function HeroSection() {
               <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-blue-600">8+</div>
               <div className="text-xs sm:text-sm text-gray-600">Years Experience</div>
             </div>
-            <div className="flex flex-col items-center" role="listitem">
-              <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-blue-600">$300K</div>
-              <div className="text-xs sm:text-sm text-gray-600">Annual Savings</div>
-            </div>
+
             <div className="flex flex-col items-center" role="listitem">
               <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-blue-600">7</div>
               <div className="text-xs sm:text-sm text-gray-600">Certifications</div>
