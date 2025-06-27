@@ -2,6 +2,22 @@
 
 import { useEffect } from 'react'
 
+// Type declarations for performance APIs
+interface PerformanceEventTiming extends PerformanceEntry {
+  processingStart: number;
+  startTime: number;
+}
+
+interface LayoutShift extends PerformanceEntry {
+  value: number;
+}
+
+declare global {
+  interface Window {
+    gtag?: (...args: any[]) => void;
+  }
+}
+
 export function PerformanceMonitor() {
   useEffect(() => {
     // Performance monitoring
@@ -18,10 +34,12 @@ export function PerformanceMonitor() {
             console.log('LCP:', entry.startTime)
           } else if (entry.name === 'FID') {
             // First Input Delay
-            console.log('FID:', entry.processingStart - entry.startTime)
+            const fidEntry = entry as PerformanceEventTiming
+            console.log('FID:', fidEntry.processingStart - fidEntry.startTime)
           } else if (entry.name === 'CLS') {
             // Cumulative Layout Shift
-            console.log('CLS:', entry.value)
+            const clsEntry = entry as LayoutShift
+            console.log('CLS:', clsEntry.value)
           }
         }
       })
@@ -42,9 +60,9 @@ export function PerformanceMonitor() {
             // Time to first byte
             ttfb: navigation.responseStart - navigation.requestStart,
             // DOM content loaded
-            domContentLoaded: navigation.domContentLoadedEventEnd - navigation.navigationStart,
+            domContentLoaded: navigation.domContentLoadedEventEnd - (navigation as any).navigationStart,
             // Page load time
-            loadTime: navigation.loadEventEnd - navigation.navigationStart,
+            loadTime: navigation.loadEventEnd - (navigation as any).navigationStart,
             // Resource load time
             resourceLoad: navigation.loadEventEnd - navigation.domContentLoadedEventEnd
           }
@@ -52,8 +70,8 @@ export function PerformanceMonitor() {
           console.log('Performance Metrics:', metrics)
           
           // Send metrics to analytics
-          if (typeof gtag !== 'undefined') {
-            gtag('event', 'performance', {
+          if (typeof window.gtag !== 'undefined') {
+            window.gtag('event', 'performance', {
               event_category: 'Performance',
               event_label: 'Page Load',
               value: Math.round(metrics.loadTime),
