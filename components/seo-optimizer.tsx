@@ -7,7 +7,7 @@ export function SEOOptimizer() {
     // Preload critical resources
     const preloadLinks = [
       { rel: 'preload', href: '/pro_pic.jpg', as: 'image' },
-      { rel: 'preload', href: '/favicon.ico', as: 'image' },
+      { rel: 'preload', href: '/Sid.jpg', as: 'image' },
     ]
 
     preloadLinks.forEach(({ rel, href, as }) => {
