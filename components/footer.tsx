@@ -96,10 +96,10 @@ export function Footer() {
                 <div className="flex items-center space-x-3 text-gray-300">
                   <Mail className="w-4 h-4" />
                   <a
-                    href="mailto:sidharth177@gmail.com"
+                    href="mailto:sidramesh2025@gmail.com"
                     className="hover:text-blue-400 transition-colors"
                   >
-                    sidharth177@gmail.com
+                    Email
                   </a>
                 </div>
               </div>
