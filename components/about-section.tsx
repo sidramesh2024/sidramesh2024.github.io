@@ -57,36 +57,6 @@ export function AboutSection() {
               </div>
             </div>
             
-            {/* Floating Achievement Cards */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="absolute -top-8 -right-8 bg-white rounded-lg shadow-lg p-4 border border-blue-100"
-            >
-              <div className="flex items-center space-x-2">
-                <Trophy className="w-5 h-5 text-yellow-500" />
-                <div>
-                  <div className="text-sm font-semibold">Lead Engineer</div>
-                  <div className="text-xs text-gray-500">Tiger Analytics</div>
-                </div>
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, delay: 0.6 }}
-              className="absolute -bottom-8 -left-8 bg-white rounded-lg shadow-lg p-4 border border-blue-100"
-            >
-              <div className="flex items-center space-x-2">
-                <TrendingUp className="w-5 h-5 text-green-500" />
-                <div>
-                  <div className="text-sm font-semibold">$300K Savings</div>
-                  <div className="text-xs text-gray-500">Annual Impact</div>
-                </div>
-              </div>
-            </motion.div>
           </motion.div>
 
           {/* Right Column - Content */}
