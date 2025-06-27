@@ -9,6 +9,8 @@ import { NavigationHeader } from '@/components/navigation-header'
 import { BreadcrumbNavigation } from '@/components/breadcrumb-navigation'
 import { StructuredData } from '@/components/structured-data'
 import { SEOOptimizer } from '@/components/seo-optimizer'
+import { PerformanceOptimizer } from '@/components/performance-optimizer'
+import { PerformanceMonitor } from '@/components/performance-monitor'
 import { Footer } from '@/components/footer'
 
 export default function Home() {
@@ -16,6 +18,8 @@ export default function Home() {
     <div className="min-h-screen bg-white">
       <StructuredData />
       <SEOOptimizer />
+      <PerformanceOptimizer />
+      <PerformanceMonitor />
       <NavigationHeader />
       <BreadcrumbNavigation />
       <main>

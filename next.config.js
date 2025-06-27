@@ -7,6 +7,8 @@ const nextConfig = {
   trailingSlash: true,
   experimental: {
     outputFileTracingRoot: path.join(__dirname, '../'),
+    optimizeCss: true,
+    optimizePackageImports: ['framer-motion', 'lucide-react'],
   },
   eslint: {
     ignoreDuringBuilds: true,
@@ -17,6 +19,7 @@ const nextConfig = {
   images: { 
     unoptimized: true,
     formats: ['image/webp', 'image/avif'],
+    minimumCacheTTL: 31536000, // 1 year
   },
   compress: true,
   poweredByHeader: false,
@@ -25,6 +28,37 @@ const nextConfig = {
   swcMinify: true,
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
+  },
+  webpack: (config, { dev, isServer }) => {
+    // Optimize bundle size
+    if (!dev && !isServer) {
+      config.optimization.splitChunks = {
+        chunks: 'all',
+        cacheGroups: {
+          vendor: {
+            test: /[\\/]node_modules[\\/]/,
+            name: 'vendors',
+            chunks: 'all',
+          },
+          framer: {
+            test: /[\\/]node_modules[\\/]framer-motion[\\/]/,
+            name: 'framer-motion',
+            chunks: 'all',
+          },
+        },
+      };
+    }
+    
+    // Optimize images
+    config.module.rules.push({
+      test: /\.(png|jpe?g|gif|svg|webp|avif)$/i,
+      type: 'asset/resource',
+      generator: {
+        filename: 'static/images/[name].[hash][ext]',
+      },
+    });
+
+    return config;
   },
   headers: async () => {
     return [
@@ -50,6 +84,29 @@ const nextConfig = {
           {
             key: 'Permissions-Policy',
             value: 'camera=(), microphone=(), geolocation=()',
+          },
+          // Performance headers
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+      {
+        source: '/static/(.*)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+      {
+        source: '/(.*\\.(js|css|png|jpg|jpeg|gif|svg|webp|avif|ico))',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
           },
         ],
       },
