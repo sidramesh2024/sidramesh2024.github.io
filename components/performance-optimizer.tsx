@@ -7,7 +7,7 @@ export function PerformanceOptimizer() {
     // Preload critical resources
     const criticalResources = [
       { rel: 'preload', href: '/pro_pic.jpg', as: 'image', fetchpriority: 'high' },
-      { rel: 'preload', href: '/favicon.ico', as: 'image', fetchpriority: 'high' },
+      { rel: 'preload', href: '/Sid.jpg', as: 'image', fetchpriority: 'high' },
     ]
 
     // Preconnect to external domains

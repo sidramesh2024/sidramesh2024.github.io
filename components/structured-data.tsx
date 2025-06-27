@@ -8,7 +8,7 @@ export function StructuredData() {
     "jobTitle": "Lead Data Engineer",
     "description": "Lead Data Engineer with 8+ years expertise in Gen AI, AWS, Azure, and scalable data solutions. Specialized in MLOps, data pipelines, and intelligent automation.",
     "url": "https://sidharthramesh.github.io",
-    "image": "https://sidharthramesh.github.io/pro_pic.jpg",
+    "image": "https://sidharthramesh.github.io/Sid.jpg",
     "sameAs": [
       "https://www.linkedin.com/in/sidharthramesh/",
       "https://x.com/sidhu177",

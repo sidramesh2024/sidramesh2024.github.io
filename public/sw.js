@@ -1,7 +1,7 @@
 const CACHE_NAME = 'sidharth-portfolio-v1';
 const urlsToCache = [
   '/',
-  '/favicon.ico',
+  '/Sid.jpg',
   '/favicon.png',
   '/apple-touch-icon.png',
   '/pro_pic.jpg',
@@ -84,8 +84,8 @@ function doBackgroundSync() {
 self.addEventListener('push', (event) => {
   const options = {
     body: event.data ? event.data.text() : 'New update available!',
-    icon: '/favicon.png',
-    badge: '/favicon.png',
+    icon: '/Sid.jpg',
+    badge: '/Sid.jpg',
     vibrate: [100, 50, 100],
     data: {
       dateOfArrival: Date.now(),
@@ -95,12 +95,12 @@ self.addEventListener('push', (event) => {
       {
         action: 'explore',
         title: 'View Portfolio',
-        icon: '/favicon.png'
+        icon: '/Sid.jpg'
       },
       {
         action: 'close',
         title: 'Close',
-        icon: '/favicon.png'
+        icon: '/Sid.jpg'
       }
     ]
   };
