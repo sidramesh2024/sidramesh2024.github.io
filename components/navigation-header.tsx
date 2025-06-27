@@ -1,4 +1,3 @@
-
 'use client'
 
 import { useState, useEffect } from 'react'
@@ -17,6 +16,19 @@ export function NavigationHeader() {
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
+
+  // Close mobile menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as Element
+      if (isMobileMenuOpen && !target.closest('.mobile-menu-container')) {
+        setIsMobileMenuOpen(false)
+      }
+    }
+
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => document.removeEventListener('mousedown', handleClickOutside)
+  }, [isMobileMenuOpen])
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId)
@@ -45,27 +57,27 @@ export function NavigationHeader() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-white/90 backdrop-blur-header shadow-lg border-b border-blue-100'
-          : 'bg-transparent'
+          ? 'bg-white/95 backdrop-blur-header shadow-lg border-b border-blue-100'
+          : 'bg-white/90 backdrop-blur-header'
       }`}
     >
       <div className="container-width">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-16 px-4 sm:px-0">
           {/* Logo */}
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="text-xl font-bold text-blue-600 hover:text-blue-700 transition-colors"
+            className="text-lg sm:text-xl font-bold text-blue-600 hover:text-blue-700 transition-colors"
           >
             Sidharth Ramesh
           </button>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden md:flex items-center space-x-6 lg:space-x-8">
             {navItems.map((item) => (
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className="text-gray-700 hover:text-blue-600 transition-colors font-medium"
+                className="text-gray-700 hover:text-blue-600 transition-colors font-medium text-sm lg:text-base"
               >
                 {item.label}
               </button>
@@ -80,7 +92,7 @@ export function NavigationHeader() {
                 href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-600 hover:text-blue-600 transition-colors"
+                className="text-gray-600 hover:text-blue-600 transition-colors p-2 rounded-lg hover:bg-blue-50"
                 aria-label={link.label}
               >
                 <link.icon className="w-5 h-5" />
@@ -92,8 +104,9 @@ export function NavigationHeader() {
           <Button
             variant="ghost"
             size="sm"
-            className="md:hidden"
+            className="md:hidden p-2 h-10 w-10"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Toggle mobile menu"
           >
             {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </Button>
@@ -101,28 +114,28 @@ export function NavigationHeader() {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden bg-white border-t border-gray-200 shadow-lg">
-            <nav className="py-4 space-y-2">
+          <div className="md:hidden mobile-menu-container bg-white border-t border-gray-200 shadow-lg">
+            <nav className="py-4 space-y-1">
               {navItems.map((item) => (
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className="block w-full px-4 py-2 text-left text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-colors"
+                  className="block w-full px-6 py-3 text-left text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-colors font-medium"
                 >
                   {item.label}
                 </button>
               ))}
-              <div className="flex items-center justify-center space-x-4 pt-4 border-t border-gray-200">
+              <div className="flex items-center justify-center space-x-6 pt-6 pb-4 border-t border-gray-200 mt-4">
                 {socialLinks.map((link) => (
                   <a
                     key={link.label}
                     href={link.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-600 hover:text-blue-600 transition-colors"
+                    className="text-gray-600 hover:text-blue-600 transition-colors p-3 rounded-lg hover:bg-blue-50"
                     aria-label={link.label}
                   >
-                    <link.icon className="w-5 h-5" />
+                    <link.icon className="w-6 h-6" />
                   </a>
                 ))}
               </div>

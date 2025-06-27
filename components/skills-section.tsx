@@ -97,7 +97,7 @@ export function SkillsSection() {
 
 
         {/* Skills Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8">
           {skillCategories.map((category, categoryIndex) => (
             <motion.div
               key={categoryIndex}
@@ -107,23 +107,23 @@ export function SkillsSection() {
               className="bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden card-hover"
             >
               {/* Header */}
-              <div className={`bg-gradient-to-r ${category.color} p-6 text-white`}>
+              <div className={`bg-gradient-to-r ${category.color} p-4 sm:p-6 text-white`}>
                 <div className="flex items-center space-x-3">
-                  <category.icon className="w-6 h-6" />
-                  <h3 className="text-lg font-semibold">{category.title}</h3>
+                  <category.icon className="w-5 h-5 sm:w-6 sm:h-6" />
+                  <h3 className="text-base sm:text-lg font-semibold">{category.title}</h3>
                 </div>
               </div>
 
               {/* Skills */}
-              <div className="p-6 space-y-6">
+              <div className="p-4 sm:p-6 space-y-4 sm:space-y-6">
                 {category.skills.map((skill, skillIndex) => (
                   <div key={skillIndex}>
-                    <div className="mb-3">
-                      <span className="font-medium text-gray-900">{skill.name}</span>
+                    <div className="mb-2 sm:mb-3">
+                      <span className="font-medium text-gray-900 text-sm sm:text-base">{skill.name}</span>
                     </div>
 
                     {/* Skill Items */}
-                    <div className="flex flex-wrap gap-2">
+                    <div className="flex flex-wrap gap-1.5 sm:gap-2">
                       {skill.items.map((item, itemIndex) => (
                         <span
                           key={itemIndex}
@@ -145,15 +145,15 @@ export function SkillsSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="mt-16"
+          className="mt-12 sm:mt-16"
         >
-          <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">
+          <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-6 sm:mb-8 text-center">
             Additional Technologies & Tools
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="bg-white rounded-lg p-4 shadow-md border border-gray-100">
-              <h4 className="font-semibold text-gray-900 mb-3">BI Tools</h4>
-              <div className="flex flex-wrap gap-2">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+            <div className="bg-white rounded-lg p-3 sm:p-4 shadow-md border border-gray-100">
+              <h4 className="font-semibold text-gray-900 mb-2 sm:mb-3 text-sm sm:text-base">BI Tools</h4>
+              <div className="flex flex-wrap gap-1.5 sm:gap-2">
                 {["Tableau", "Apache Superset", "Jasper", "Apache Zeppelin"].map((tool) => (
                   <span key={tool} className="skill-badge text-xs">
                     {tool}
@@ -161,9 +161,9 @@ export function SkillsSection() {
                 ))}
               </div>
             </div>
-            <div className="bg-white rounded-lg p-4 shadow-md border border-gray-100">
-              <h4 className="font-semibold text-gray-900 mb-3">Web Development</h4>
-              <div className="flex flex-wrap gap-2">
+            <div className="bg-white rounded-lg p-3 sm:p-4 shadow-md border border-gray-100">
+              <h4 className="font-semibold text-gray-900 mb-2 sm:mb-3 text-sm sm:text-base">Web Development</h4>
+              <div className="flex flex-wrap gap-1.5 sm:gap-2">
                 {["Django", "Flask", "Streamlit", "HTML", "Drupal"].map((tool) => (
                   <span key={tool} className="skill-badge text-xs">
                     {tool}
@@ -171,9 +171,9 @@ export function SkillsSection() {
                 ))}
               </div>
             </div>
-            <div className="bg-white rounded-lg p-4 shadow-md border border-gray-100">
-              <h4 className="font-semibold text-gray-900 mb-3">Operating Systems</h4>
-              <div className="flex flex-wrap gap-2">
+            <div className="bg-white rounded-lg p-3 sm:p-4 shadow-md border border-gray-100">
+              <h4 className="font-semibold text-gray-900 mb-2 sm:mb-3 text-sm sm:text-base">Operating Systems</h4>
+              <div className="flex flex-wrap gap-1.5 sm:gap-2">
                 {["Linux", "Ubuntu", "RedHat", "Windows"].map((tool) => (
                   <span key={tool} className="skill-badge text-xs">
                     {tool}
@@ -181,9 +181,9 @@ export function SkillsSection() {
                 ))}
               </div>
             </div>
-            <div className="bg-white rounded-lg p-4 shadow-md border border-gray-100">
-              <h4 className="font-semibold text-gray-900 mb-3">Methodologies</h4>
-              <div className="flex flex-wrap gap-2">
+            <div className="bg-white rounded-lg p-3 sm:p-4 shadow-md border border-gray-100">
+              <h4 className="font-semibold text-gray-900 mb-2 sm:mb-3 text-sm sm:text-base">Methodologies</h4>
+              <div className="flex flex-wrap gap-1.5 sm:gap-2">
                 {["Agile", "DevOps", "CI/CD", "Scrum"].map((tool) => (
                   <span key={tool} className="skill-badge text-xs">
                     {tool}

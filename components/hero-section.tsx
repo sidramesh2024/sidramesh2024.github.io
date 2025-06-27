@@ -1,4 +1,3 @@
-
 'use client'
 
 import { useEffect, useState } from 'react'
@@ -21,7 +20,7 @@ export function HeroSection() {
   }
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center tech-pattern overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center tech-pattern overflow-hidden pt-16">
       {/* Background Elements */}
       <div className="absolute inset-0 hero-gradient" />
       <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-transparent" />
@@ -33,17 +32,17 @@ export function HeroSection() {
         <div className="absolute bottom-1/4 left-1/3 w-1.5 h-1.5 bg-blue-300 rounded-full animate-pulse delay-500" />
       </div>
 
-      <div className="container-width relative z-10">
-        <div className="text-center space-y-8">
+      <div className="container-width relative z-10 px-4 sm:px-6 lg:px-8">
+        <div className="text-center space-y-6 sm:space-y-8">
           {/* Main Content */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 30 }}
             transition={{ duration: 0.8, ease: 'easeOut' }}
           >
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 leading-tight">
               <span className="block">Sidharth Ramesh</span>
-              <span className="block text-blue-600 mt-2">Lead Data Engineer</span>
+              <span className="block text-blue-600 mt-1 sm:mt-2">Lead Data Engineer</span>
             </h1>
           </motion.div>
           
@@ -52,7 +51,7 @@ export function HeroSection() {
             animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
             transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
           >
-            <h2 className="text-xl md:text-2xl text-gray-600 font-light max-w-4xl mx-auto">
+            <h2 className="text-lg sm:text-xl md:text-2xl text-gray-600 font-light max-w-4xl mx-auto px-4">
               AI Specialist building intelligent, scalable data solutions that drive business innovation
             </h2>
           </motion.div>
@@ -62,19 +61,19 @@ export function HeroSection() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: isVisible ? 1 : 0, scale: isVisible ? 1 : 0.9 }}
             transition={{ duration: 0.8, delay: 0.4, ease: 'easeOut' }}
-            className="flex flex-wrap justify-center gap-8 md:gap-12 text-center"
+            className="flex flex-wrap justify-center gap-6 sm:gap-8 md:gap-12 text-center"
           >
             <div className="flex flex-col items-center">
-              <div className="text-3xl md:text-4xl font-bold text-blue-600">8+</div>
-              <div className="text-sm text-gray-600">Years Experience</div>
+              <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-blue-600">8+</div>
+              <div className="text-xs sm:text-sm text-gray-600">Years Experience</div>
             </div>
             <div className="flex flex-col items-center">
-              <div className="text-3xl md:text-4xl font-bold text-blue-600">$300K</div>
-              <div className="text-sm text-gray-600">Annual Savings</div>
+              <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-blue-600">$300K</div>
+              <div className="text-xs sm:text-sm text-gray-600">Annual Savings</div>
             </div>
             <div className="flex flex-col items-center">
-              <div className="text-3xl md:text-4xl font-bold text-blue-600">7</div>
-              <div className="text-sm text-gray-600">Certifications</div>
+              <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-blue-600">7</div>
+              <div className="text-xs sm:text-sm text-gray-600">Certifications</div>
             </div>
           </motion.div>
 
@@ -83,12 +82,12 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
             transition={{ duration: 0.8, delay: 0.6, ease: 'easeOut' }}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+            className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center px-4"
           >
             <Button
               onClick={scrollToNext}
               size="lg"
-              className="tech-gradient text-white hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 group"
+              className="tech-gradient text-white hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 group w-full sm:w-auto"
             >
               View My Work
               <ArrowDown className="ml-2 w-4 h-4 group-hover:translate-y-1 transition-transform" />
@@ -97,7 +96,7 @@ export function HeroSection() {
               variant="outline"
               size="lg"
               asChild
-              className="border-blue-200 text-blue-700 hover:bg-blue-50 hover:border-blue-300 transition-all duration-300"
+              className="border-blue-200 text-blue-700 hover:bg-blue-50 hover:border-blue-300 transition-all duration-300 w-full sm:w-auto"
             >
               <a
                 href="https://www.linkedin.com/in/sidharthramesh/"
@@ -115,12 +114,12 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
             transition={{ duration: 0.8, delay: 0.8, ease: 'easeOut' }}
-            className="flex flex-wrap justify-center gap-2 max-w-3xl mx-auto"
+            className="flex flex-wrap justify-center gap-2 max-w-3xl mx-auto px-4"
           >
             {['Gen AI', 'AWS', 'Azure', 'MLOps', 'Data Pipelines', 'Spark', 'Snowflake'].map((tech, index) => (
               <span
                 key={tech}
-                className="skill-badge"
+                className="skill-badge text-xs sm:text-sm"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 {tech}
@@ -135,14 +134,14 @@ export function HeroSection() {
         initial={{ opacity: 0 }}
         animate={{ opacity: isVisible ? 1 : 0 }}
         transition={{ duration: 1, delay: 1.2 }}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+        className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2"
       >
         <button
           onClick={scrollToNext}
           className="flex flex-col items-center space-y-2 text-gray-500 hover:text-blue-600 transition-colors group"
         >
-          <span className="text-sm font-medium">Scroll to explore</span>
-          <ArrowDown className="w-5 h-5 animate-bounce group-hover:text-blue-600" />
+          <span className="text-xs sm:text-sm font-medium">Scroll to explore</span>
+          <ArrowDown className="w-4 h-4 sm:w-5 sm:h-5 animate-bounce group-hover:text-blue-600" />
         </button>
       </motion.div>
     </section>

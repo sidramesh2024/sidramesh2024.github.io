@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -91,7 +90,7 @@ html {
 }
 
 .section-padding {
-  @apply py-16 px-4 sm:px-6 lg:px-8;
+  @apply py-12 sm:py-16 px-4 sm:px-6 lg:px-8;
 }
 
 .container-width {
@@ -103,7 +102,7 @@ html {
 }
 
 .skill-badge {
-  @apply inline-flex items-center px-3 py-1 text-sm font-medium bg-blue-50 text-blue-700 rounded-full border border-blue-200 transition-colors hover:bg-blue-100;
+  @apply inline-flex items-center px-2 sm:px-3 py-1 text-xs sm:text-sm font-medium bg-blue-50 text-blue-700 rounded-full border border-blue-200 transition-colors hover:bg-blue-100;
 }
 
 .timeline-line {
@@ -122,6 +121,33 @@ html {
 /* Loading skeleton */
 .loading-skeleton {
   @apply animate-pulse bg-gray-200 rounded;
+}
+
+/* Mobile-specific improvements */
+@media (max-width: 640px) {
+  .mobile-menu-container {
+    max-height: calc(100vh - 4rem);
+    overflow-y: auto;
+  }
+  
+  .skill-badge {
+    @apply text-xs px-2 py-1;
+  }
+  
+  .section-padding {
+    @apply py-8 px-4;
+  }
+}
+
+/* Touch-friendly improvements */
+@media (hover: none) and (pointer: coarse) {
+  .card-hover:hover {
+    @apply transform-none shadow-lg;
+  }
+  
+  .skill-badge:hover {
+    @apply bg-blue-100;
+  }
 }
 
 /* Smooth animations */
