@@ -85,18 +85,7 @@ const certificationStats = [
     label: "Certifications",
     description: "Industry-recognized credentials"
   },
-  {
-    icon: Star,
-    value: "5",
-    label: "Years",
-    description: "Certification journey span"
-  },
-  {
-    icon: CheckCircle,
-    value: "100%",
-    label: "Current",
-    description: "Active certifications"
-  }
+
 ]
 
 export function CertificationsSection() {

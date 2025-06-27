@@ -49,7 +49,7 @@ export function AboutSection() {
               <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl transform rotate-3"></div>
               <div className="relative aspect-[4/5] bg-white rounded-2xl overflow-hidden shadow-2xl">
                 <Image
-                  src="https://lookaside.instagram.com/seo/google_widget/crawler/?media_id=3499186296374251273"
+                  src="/images/pro_pic.jpg"
                   alt="Sidharth Ramesh - Lead Data Engineer"
                   fill
                   className="object-cover"
