@@ -1,4 +1,3 @@
-
 'use client'
 
 import { motion } from 'framer-motion'
@@ -83,16 +82,16 @@ const Skills = () => {
           </motion.h2>
 
           {/* Skills Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {skillCategories.map((category, index) => (
               <motion.div
                 key={index}
                 variants={itemVariants}
                 className="card group"
               >
-                <div className="flex items-center space-x-3 mb-6">
+                <div className="flex items-center space-x-3 mb-4 sm:mb-6">
                   {category.icon}
-                  <h3 className="heading-sm group-hover:text-cyan transition-colors">
+                  <h3 className="text-lg sm:text-xl font-semibold text-lightest-slate group-hover:text-cyan transition-colors">
                     {category.category}
                   </h3>
                 </div>
@@ -102,7 +101,7 @@ const Skills = () => {
                     <motion.span
                       key={skillIndex}
                       whileHover={{ scale: 1.05 }}
-                      className="px-3 py-1 bg-cyan/10 text-cyan text-sm rounded-full border border-cyan/20 hover:bg-cyan/20 transition-all duration-200"
+                      className="px-2 sm:px-3 py-1 bg-cyan/10 text-cyan text-xs sm:text-sm rounded-full border border-cyan/20 hover:bg-cyan/20 transition-all duration-200"
                     >
                       {skill}
                     </motion.span>
@@ -113,9 +112,9 @@ const Skills = () => {
           </div>
 
           {/* Additional Technologies */}
-          <motion.div variants={itemVariants} className="mt-16">
-            <h3 className="heading-md mb-8 text-center">Core Technologies & Frameworks</h3>
-            <div className="flex flex-wrap justify-center gap-4">
+          <motion.div variants={itemVariants} className="mt-12 sm:mt-16">
+            <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold text-lightest-slate mb-6 sm:mb-8 text-center">Core Technologies & Frameworks</h3>
+            <div className="flex flex-wrap justify-center gap-3 sm:gap-4">
               {[
                 'Apache Spark', 'Apache Kafka', 'Apache Airflow', 'dbt', 'Great Expectations',
                 'Pandas', 'NumPy', 'Scikit-learn', 'TensorFlow', 'PyTorch', 'FastAPI',
@@ -124,7 +123,7 @@ const Skills = () => {
                 <motion.span
                   key={index}
                   whileHover={{ scale: 1.1 }}
-                  className="px-4 py-2 bg-transparent border border-cyan text-cyan rounded hover:bg-cyan hover:text-navy transition-all duration-300 font-mono text-sm"
+                  className="px-3 sm:px-4 py-2 bg-transparent border border-cyan text-cyan rounded hover:bg-cyan hover:text-navy transition-all duration-300 font-mono text-xs sm:text-sm"
                 >
                   {tech}
                 </motion.span>

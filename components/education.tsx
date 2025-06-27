@@ -1,4 +1,3 @@
-
 'use client'
 
 import { motion } from 'framer-motion'
@@ -70,7 +69,7 @@ const Education = () => {
           </motion.h2>
 
           {/* Education Cards */}
-          <div className="grid lg:grid-cols-2 gap-8">
+          <div className="grid lg:grid-cols-2 gap-6 sm:gap-8">
             {education.map((edu, index) => (
               <motion.div
                 key={index}
@@ -78,17 +77,17 @@ const Education = () => {
                 className="card group"
               >
                 {/* Header */}
-                <div className="flex items-start justify-between mb-6">
+                <div className="flex items-start justify-between mb-4 sm:mb-6">
                   <div className="flex items-center space-x-3">
-                    <GraduationCap className="text-cyan flex-shrink-0" size={28} />
+                    <GraduationCap className="text-cyan flex-shrink-0" size={24} />
                     <div>
-                      <h3 className="heading-sm text-lightest-slate group-hover:text-cyan transition-colors mb-1">
+                      <h3 className="text-lg sm:text-xl font-semibold text-lightest-slate group-hover:text-cyan transition-colors mb-1">
                         {edu.degree}
                       </h3>
-                      <h4 className="text-lg text-cyan font-medium mb-1">
+                      <h4 className="text-base sm:text-lg text-cyan font-medium mb-1">
                         {edu.school}
                       </h4>
-                      <p className="text-slate text-sm">
+                      <p className="text-slate text-xs sm:text-sm">
                         {edu.program}
                       </p>
                     </div>
@@ -96,8 +95,8 @@ const Education = () => {
                 </div>
 
                 {/* Details */}
-                <div className="space-y-4">
-                  <div className="flex items-center justify-between text-sm">
+                <div className="space-y-3 sm:space-y-4">
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between text-sm space-y-1 sm:space-y-0">
                     <div className="flex items-center space-x-2">
                       <Calendar className="text-cyan" size={16} />
                       <span className="font-mono text-slate">{edu.period}</span>
@@ -109,16 +108,16 @@ const Education = () => {
                   <ul className="space-y-2">
                     {edu.highlights.map((highlight, highlightIndex) => (
                       <li key={highlightIndex} className="flex items-start space-x-3">
-                        <span className="text-cyan mt-2 flex-shrink-0">▹</span>
-                        <span className="text-slate leading-relaxed text-sm">{highlight}</span>
+                        <span className="text-cyan mt-1.5 sm:mt-2 flex-shrink-0">▹</span>
+                        <span className="text-xs sm:text-sm text-slate leading-relaxed">{highlight}</span>
                       </li>
                     ))}
                   </ul>
 
                   {/* Achievement Badge */}
-                  <div className="flex items-center space-x-2 pt-4 border-t border-cyan/20">
+                  <div className="flex items-center space-x-2 pt-3 sm:pt-4 border-t border-cyan/20">
                     <Award className="text-cyan" size={16} />
-                    <span className="text-cyan text-sm font-medium">{edu.gpa}</span>
+                    <span className="text-cyan text-xs sm:text-sm font-medium">{edu.gpa}</span>
                   </div>
                 </div>
               </motion.div>
@@ -126,10 +125,10 @@ const Education = () => {
           </div>
 
           {/* Academic Journey Summary */}
-          <motion.div variants={itemVariants} className="mt-16">
+          <motion.div variants={itemVariants} className="mt-12 sm:mt-16">
             <div className="card text-center">
-              <h3 className="heading-md mb-6">Academic Excellence</h3>
-              <p className="text-lg leading-relaxed max-w-3xl mx-auto text-slate">
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold text-lightest-slate mb-4 sm:mb-6">Academic Excellence</h3>
+              <p className="text-base sm:text-lg leading-relaxed max-w-3xl mx-auto text-slate">
                 My educational journey spans two prestigious institutions and combines 
                 <span className="text-cyan"> computational theory with engineering fundamentals</span>. 
                 The unique intersection of Computer Science and Mechanical Engineering provides me 
@@ -137,14 +136,14 @@ const Education = () => {
                 that bridge theoretical knowledge with practical implementation.
               </p>
               
-              <div className="flex flex-wrap justify-center gap-4 mt-8">
-                <div className="px-4 py-2 bg-cyan/10 border border-cyan/20 rounded text-cyan">
+              <div className="flex flex-wrap justify-center gap-3 sm:gap-4 mt-6 sm:mt-8">
+                <div className="px-3 sm:px-4 py-2 bg-cyan/10 border border-cyan/20 rounded text-cyan text-xs sm:text-sm">
                   Dual Master's Degrees
                 </div>
-                <div className="px-4 py-2 bg-cyan/10 border border-cyan/20 rounded text-cyan">
+                <div className="px-3 sm:px-4 py-2 bg-cyan/10 border border-cyan/20 rounded text-cyan text-xs sm:text-sm">
                   9+ Years Academic Excellence
                 </div>
-                <div className="px-4 py-2 bg-cyan/10 border border-cyan/20 rounded text-cyan">
+                <div className="px-3 sm:px-4 py-2 bg-cyan/10 border border-cyan/20 rounded text-cyan text-xs sm:text-sm">
                   OMSCS Graduate
                 </div>
               </div>

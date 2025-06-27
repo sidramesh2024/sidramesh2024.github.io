@@ -1,4 +1,3 @@
-
 'use client'
 
 import { motion } from 'framer-motion'
@@ -92,7 +91,7 @@ const Experience = () => {
             {/* Timeline Line */}
             <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-cyan/30 hidden md:block" />
 
-            <div className="space-y-12">
+            <div className="space-y-8 md:space-y-12">
               {experiences.map((exp, index) => (
                 <motion.div
                   key={index}
@@ -104,29 +103,29 @@ const Experience = () => {
                   
                   {/* Experience Card */}
                   <div className="card group">
-                    <div className="flex items-start justify-between mb-4">
+                    <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-4 space-y-2 sm:space-y-0">
                       <div className="flex items-center space-x-3">
-                        <Briefcase className="text-cyan" size={24} />
+                        <Briefcase className="text-cyan" size={20} />
                         <div>
-                          <h3 className="heading-sm text-lightest-slate group-hover:text-cyan transition-colors">
+                          <h3 className="text-lg sm:text-xl font-semibold text-lightest-slate group-hover:text-cyan transition-colors">
                             {exp.title}
                           </h3>
-                          <h4 className="text-lg text-cyan font-medium">
+                          <h4 className="text-base sm:text-lg text-cyan font-medium">
                             {exp.company}
                           </h4>
                         </div>
                       </div>
-                      <div className="text-right text-sm font-mono">
+                      <div className="text-left sm:text-right text-sm font-mono">
                         <div className="text-slate">{exp.period}</div>
                         <div className="text-cyan">{exp.location}</div>
                       </div>
                     </div>
 
-                    <ul className="space-y-3">
+                    <ul className="space-y-2 sm:space-y-3">
                       {exp.achievements.map((achievement, achIndex) => (
                         <li key={achIndex} className="flex items-start space-x-3">
-                          <span className="text-cyan mt-2 flex-shrink-0">▹</span>
-                          <span className="text-slate leading-relaxed">{achievement}</span>
+                          <span className="text-cyan mt-1.5 sm:mt-2 flex-shrink-0">▹</span>
+                          <span className="text-sm sm:text-base text-slate leading-relaxed">{achievement}</span>
                         </li>
                       ))}
                     </ul>

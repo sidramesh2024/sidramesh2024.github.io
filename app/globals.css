@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -64,29 +63,48 @@ body {
   transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
+/* Mobile-specific improvements */
+@media (max-width: 640px) {
+  /* Improve touch targets */
+  button, a {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Better text readability on mobile */
+  p {
+    line-height: 1.6;
+  }
+  
+  /* Reduce motion for better mobile performance */
+  * {
+    transition-duration: 0.2s;
+  }
+}
+
 @layer components {
   .section-container {
-    @apply max-w-6xl mx-auto px-6 sm:px-8 lg:px-12;
+    @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-12;
   }
   
   .section-padding {
-    @apply py-20 lg:py-32;
+    @apply py-16 sm:py-20 lg:py-32;
   }
   
   .heading-xl {
-    @apply text-4xl sm:text-5xl lg:text-6xl font-semibold text-lightest-slate leading-tight;
+    @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-lightest-slate leading-tight;
   }
   
   .heading-lg {
-    @apply text-3xl sm:text-4xl font-semibold text-lightest-slate;
+    @apply text-2xl sm:text-3xl md:text-4xl font-semibold text-lightest-slate;
   }
   
   .heading-md {
-    @apply text-2xl sm:text-3xl font-semibold text-lightest-slate;
+    @apply text-xl sm:text-2xl md:text-3xl font-semibold text-lightest-slate;
   }
   
   .heading-sm {
-    @apply text-xl sm:text-2xl font-semibold text-lightest-slate;
+    @apply text-lg sm:text-xl md:text-2xl font-semibold text-lightest-slate;
   }
   
   .text-accent {
@@ -102,26 +120,47 @@ body {
   }
   
   .btn-primary {
-    @apply bg-transparent border border-cyan text-cyan px-6 py-3 rounded text-sm font-medium hover:bg-cyan-tint transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-cyan focus:ring-offset-2 focus:ring-offset-navy;
+    @apply bg-transparent border border-cyan text-cyan px-4 sm:px-6 py-2 sm:py-3 rounded text-sm font-medium hover:bg-cyan-tint transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-cyan focus:ring-offset-2 focus:ring-offset-navy;
   }
   
   .btn-outline {
-    @apply border border-cyan text-cyan bg-transparent hover:bg-cyan-tint px-4 py-2 rounded transition-all duration-300;
+    @apply border border-cyan text-cyan bg-transparent hover:bg-cyan-tint px-3 sm:px-4 py-2 rounded transition-all duration-300;
   }
   
   .card {
-    @apply bg-light-navy p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1;
+    @apply bg-light-navy p-4 sm:p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1;
   }
   
   .numbered-heading {
-    @apply flex items-center text-lightest-slate font-semibold text-2xl sm:text-3xl mb-8 lg:mb-12;
+    @apply flex items-center text-lightest-slate font-semibold text-xl sm:text-2xl md:text-3xl mb-6 sm:mb-8 lg:mb-12;
   }
   
   .numbered-heading::before {
-    @apply text-cyan font-mono text-lg mr-2;
+    @apply text-cyan font-mono text-base sm:text-lg mr-2;
   }
   
   .numbered-heading::after {
-    @apply content-[''] flex-1 h-px bg-lightest-navy ml-6;
+    @apply content-[''] flex-1 h-px bg-lightest-navy ml-4 sm:ml-6;
+  }
+  
+  /* Mobile-optimized utilities */
+  .mobile-text-sm {
+    @apply text-xs sm:text-sm;
+  }
+  
+  .mobile-text-base {
+    @apply text-sm sm:text-base;
+  }
+  
+  .mobile-text-lg {
+    @apply text-base sm:text-lg;
+  }
+  
+  .mobile-padding {
+    @apply px-4 sm:px-6;
+  }
+  
+  .mobile-margin {
+    @apply mx-4 sm:mx-6;
   }
 }

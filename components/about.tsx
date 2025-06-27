@@ -1,4 +1,3 @@
-
 'use client'
 
 import { motion } from 'framer-motion'
@@ -40,10 +39,10 @@ const About = () => {
             About Me
           </motion.h2>
 
-          <div className="grid lg:grid-cols-3 gap-12 items-start">
+          <div className="grid lg:grid-cols-3 gap-8 lg:gap-12 items-start">
             {/* Content */}
-            <motion.div variants={itemVariants} className="lg:col-span-2 space-y-6">
-              <p className="text-lg leading-relaxed">
+            <motion.div variants={itemVariants} className="lg:col-span-2 space-y-4 sm:space-y-6">
+              <p className="text-base sm:text-lg leading-relaxed">
                 Hello! I'm Sidharth, a passionate technologist with a deep love for transforming 
                 complex data challenges into elegant, scalable solutions. My journey in data 
                 engineering began during my academic pursuits and has evolved into{' '}
@@ -51,7 +50,7 @@ const About = () => {
                 applied computing industry.
               </p>
 
-              <p className="text-lg leading-relaxed">
+              <p className="text-base sm:text-lg leading-relaxed">
                 Currently serving as a <span className="text-cyan">Lead Data Engineer at Tiger Analytics</span>, 
                 I specialize in building cloud-agnostic data platforms using{' '}
                 <span className="text-cyan">AWS and Azure</span>. My expertise spans the entire 
@@ -60,7 +59,7 @@ const About = () => {
                 <span className="text-cyan">Agentic AI applications</span> that drive business value.
               </p>
 
-              <p className="text-lg leading-relaxed">
+              <p className="text-base sm:text-lg leading-relaxed">
                 My academic foundation includes dual Master's degrees: an{' '}
                 <span className="text-cyan">MS in Computer Science from Georgia Tech's OMSCS program</span> 
                 and an <span className="text-cyan">MS in Mechanical Engineering from Rose-Hulman Institute of Technology</span>. 
@@ -68,7 +67,7 @@ const About = () => {
                 approach data problems with both analytical rigor and practical innovation.
               </p>
 
-              <p className="text-lg leading-relaxed">
+              <p className="text-base sm:text-lg leading-relaxed">
                 When I'm not architecting data solutions, I'm exploring the latest advancements 
                 in AI/ML technologies, contributing to open-source projects, and sharing knowledge 
                 with the data engineering community.
@@ -76,8 +75,8 @@ const About = () => {
             </motion.div>
 
             {/* Profile Image */}
-            <motion.div variants={itemVariants} className="lg:col-span-1">
-              <div className="relative group">
+            <motion.div variants={itemVariants} className="lg:col-span-1 order-first lg:order-last">
+              <div className="relative group max-w-xs mx-auto lg:max-w-none">
                 <div className="relative aspect-square bg-cyan/10 rounded-lg overflow-hidden">
                   <Image
                     src="https://i.pinimg.com/originals/4c/26/67/4c26671d27cfef60f62e60ab3960417c.jpg"

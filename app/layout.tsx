@@ -1,4 +1,3 @@
-
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
@@ -20,6 +19,7 @@ export const metadata: Metadata = {
     description: 'Professional portfolio showcasing 8 years of Data Engineering expertise',
     type: 'website',
   },
+  viewport: 'width=device-width, initial-scale=1, maximum-scale=1',
 }
 
 export default function RootLayout({
@@ -29,6 +29,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth">
+      <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+      </head>
       <body className={`${inter.className} bg-navy text-light-grey antialiased`}>
         {children}
       </body>
