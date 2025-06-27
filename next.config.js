@@ -7,7 +7,6 @@ const nextConfig = {
   trailingSlash: true,
   experimental: {
     outputFileTracingRoot: path.join(__dirname, '../'),
-    optimizeCss: true,
     optimizePackageImports: ['framer-motion', 'lucide-react'],
   },
   eslint: {
