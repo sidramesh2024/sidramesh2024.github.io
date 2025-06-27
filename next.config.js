@@ -3,7 +3,8 @@ const path = require('path');
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   distDir: process.env.NEXT_DIST_DIR || '.next',
-  output: process.env.NEXT_OUTPUT_MODE,
+  output: 'export',
+  trailingSlash: true,
   experimental: {
     outputFileTracingRoot: path.join(__dirname, '../'),
   },
@@ -13,7 +14,11 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: false,
   },
-  images: { unoptimized: true },
+  images: { 
+    unoptimized: true,
+    loader: 'default',
+  },
+  // Remove basePath and assetPrefix for now - we'll handle this differently
 };
 
 module.exports = nextConfig;
