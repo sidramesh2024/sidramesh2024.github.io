@@ -36,6 +36,8 @@ jobs:
         run: npm ci
       
       - name: Build with Next.js
+        env:
+          NEXT_OUTPUT_MODE: export
         run: npm run build
       
       - name: Upload artifact
